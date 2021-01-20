@@ -33,6 +33,8 @@ endif (APPLE)
 # end of finding cuda and cudnn
 ##########################################################
 
+set(CUDA_CUBLAS_LIBRARIES ${CUDA_TOOLKIT_ROOT_DIR}/lib64/libcublas.so)
+
 # detch architectures, set arch and code
 set(arch_detect_file ${PROJECT_ROOT_DIR}/cmake/arch_detect.cu)
 

@@ -1,7 +1,7 @@
-CUDA_ROOT_DIR=/usr/local/cuda
-CUDNN_ROOT_DIR=/data/lwang53/lib/cuDNN7.0
+CUDA_ROOT_DIR=/usr/local/cuda-10.2
+CUDNN_ROOT_DIR=/usr/local/cuda-10.2
 
-GLOG_ROOT=/data/lwang53/lib/glog
+GLOG_ROOT=/usr/lib/x86_64-linux-gnu
 
 # example
 # LIBJPEG_INCLUDE_DIR = /usr/include/
