@@ -63,6 +63,12 @@ target_link_libraries(residual_32_torch superneurons)
 CUDA_ADD_EXECUTABLE(cifar10 cifar10.cpp)
 target_link_libraries(cifar10 superneurons)
 
+CUDA_ADD_EXECUTABLE(cifar10-vgg16 cifar10_vgg16.cpp)
+target_link_libraries(cifar10-vgg16 superneurons)
+
+CUDA_ADD_EXECUTABLE(cifar10-res32 cifar10_resnet32.cpp)
+target_link_libraries(cifar10-res32 superneurons)
+
 CUDA_ADD_EXECUTABLE(cifar cifar.cpp)
 target_link_libraries(cifar superneurons)
 

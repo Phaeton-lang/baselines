@@ -74,9 +74,13 @@ int main(int argc, char **argv) {
     test_image_bin  = (char *) "/home/ljs/data/data/cifar10_test_image_0.bin";
     test_label_bin  = (char *) "/home/ljs/data/data/cifar10_test_label_0.bin";
 
-    const size_t batch_size = 100; //train and test must be same
+    if(argc != 2) {
+      printf("ERROR! Please input batch size!!!\n");
+      exit(-1);
+    }
+    int bs = std::stoi(argv[1]);
+    const size_t batch_size = bs; //train and test must be same
     const size_t C = 3, H = 32, W = 32;
-
 
     base_preprocess_t<float> *mean_sub =
             (base_preprocess_t<float> *) new mean_subtraction_t<float>(batch_size, C, H, W, train_mean_file);
@@ -161,13 +165,11 @@ int main(int argc, char **argv) {
         net = residual_block(net, nstage[0], false);
     }
 
-
     net = residual_block(net, nstage[1], true);
 
     for (int i = 1; i < loop_num; i++) {
         net = residual_block(net, nstage[1], false);
     }
-
 
     net = residual_block(net, nstage[2], true);
 
@@ -188,6 +190,5 @@ int main(int argc, char **argv) {
     const size_t tracking_window = train_imgs / batch_size;
 
     n.train(200000, tracking_window, 500);
-
 }
 

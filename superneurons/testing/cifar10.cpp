@@ -11,13 +11,18 @@ int main(int argc, char **argv) {
     char* test_image_bin;
     char* train_mean_file;
 
-    train_mean_file = (char *) "/data/lwang53/dataset/cifar/cifar_train.mean";
-    train_image_bin = (char *) "/data/lwang53/dataset/cifar/cifar10_train_image_0.bin";
-    train_label_bin = (char *) "/data/lwang53/dataset/cifar/cifar10_train_label_0.bin";
-    test_image_bin  = (char *) "/data/lwang53/dataset/cifar/cifar10_test_image_0.bin";
-    test_label_bin  = (char *) "/data/lwang53/dataset/cifar/cifar10_test_label_0.bin";
+    train_mean_file = (char *) "/home/ljs/data/data/cifar_train.mean";
+    train_image_bin = (char *) "/home/ljs/data/data/cifar10_train_image_0.bin";
+    train_label_bin = (char *) "/home/ljs/data/data/cifar10_train_label_0.bin";
+    test_image_bin  = (char *) "/home/ljs/data/data/cifar10_test_image_0.bin";
+    test_label_bin  = (char *) "/home/ljs/data/data/cifar10_test_label_0.bin";
 
-    const size_t batch_size = 256; //train and test must be same
+    if(argc != 2) {
+      printf("ERROR! Please input batch size!!!\n");
+      exit(-1);
+    }
+    int bs = std::stoi(argv[1]);
+    const size_t batch_size = bs; //train and test must be same
     const size_t C = 3, H = 32, W = 32;
     const int flag = 0;     // 1 for read from memory, 0 for read from disk
 
