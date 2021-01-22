@@ -41,6 +41,8 @@
 import argparse
 import tensorflow as tf
 
+import time
+
 import numpy as np
 import os
 from tensorflow.keras import backend as K
@@ -62,6 +64,7 @@ model_choices = {'resnet50': tf.keras.applications.ResNet50,
                  'densenet121': tf.keras.applications.DenseNet121,
                  'densenet169': tf.keras.applications.DenseNet169,
                  'densenet201': tf.keras.applications.DenseNet201,
+                 'vgg16': tf.keras.applications.VGG16,
                  'inception': tf.keras.applications.InceptionV3,
                  'inceptionresnet': tf.keras.applications.InceptionResNetV2,
                  'mobilenet': tf.keras.applications.MobileNet,
@@ -134,6 +137,7 @@ def get_callbacks(args):
 def run_model(args):
     if args.lms:
         tf.config.experimental.set_lms_enabled(True)
+        tf.experimental.get_peak_bytes_active(0)
 
     image_dim = args.image_size
     opt = tf.keras.optimizers.RMSprop()
@@ -172,9 +176,14 @@ def run_model(args):
                                               input_shape)
 
 
+    start_time = int(round(time.time()*1000))
     model.fit(random_generator, steps_per_epoch=steps_per_epoch,
               verbose=1 if not hvd or hvd.rank() == 0 else 0,
               epochs=args.epochs, callbacks=get_callbacks(args))
+    end_time = int(round(time.time()*1000))
+    throughput = args.epochs * args.batch_size * args.steps / (end_time - start_time) * 1000
+    print('training throughput: {}'.format(throughput))
+    print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
 
 
 def main():
