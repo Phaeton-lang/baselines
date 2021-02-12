@@ -180,10 +180,10 @@ int main(int argc, char **argv) {
 //    train_label_bin = (char *) "/home/wwu/DeepLearning/data/cifar/cifar10_train_label_0.bin";
 //    test_image_bin  = (char *) "/home/wwu/DeepLearning/data/cifar/cifar10_test_image_0.bin";
 //    test_label_bin  = (char *) "/home/wwu/DeepLearning/data/cifar/cifar10_test_label_0.bin";
+
+    /// variable batch size, N*3*299*299
     const size_t batch_size = static_cast<const size_t>(atoi(argv[1])); //train and test must be same
-
     const size_t C=3, H=299, W=299;
-
     float channel_mean[3] = {104, 117, 123};
 
     preprocessor<float>* p = new preprocessor<float>();
