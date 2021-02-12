@@ -170,10 +170,10 @@ int main(int argc, char **argv) {
 //    char *checkpoint;
 
 //    train_mean_file = (char *) "/home/ay27/dataset/299/imgnet_train.mean";
-    train_image_bin = (char *) "/home/ay27/dataset/299/val_data_0.bin";
-    train_label_bin = (char *) "/home/ay27/dataset/299/val_label_0.bin";
-    test_image_bin  = (char *) "/home/ay27/dataset/299/val_data_0.bin";
-    test_label_bin  = (char *) "/home/ay27/dataset/299/val_label_0.bin";
+    train_image_bin = (char *) "/home/ljs/work-space/memory/imagenet299/imagenet299_data_0.bin";
+    train_label_bin = (char *) "/home/ljs/work-space/memory/imagenet299/imagenet299_label_0.bin";
+    test_image_bin  = (char *) "/home/ljs/work-space/memory/imagenet299/imagenet299_data_0.bin";
+    test_label_bin  = (char *) "/home/ljs/work-space/memory/imagenet299/imagenet299_label_0.bin";
 //    checkpoint = (char*) "/storage/dataset/imagenet2012/299/checkpoint";
 //    train_mean_file = (char *) "/home/wwu/DeepLearning/data/cifar/cifar10_train_image.mean";
 //    train_image_bin = (char *) "/home/wwu/DeepLearning/data/cifar/cifar10_train_image_0.bin";
