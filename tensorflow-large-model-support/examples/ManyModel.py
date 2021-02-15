@@ -57,6 +57,7 @@ if "OMPI_COMM_WORLD_RANK" in os.environ:
 # Review: Inception-v4 — Evolved From GoogLeNet, Merged with ResNet Idea (Image Classification),
 # <https://towardsdatascience.com/review-inception-v4-evolved-from-googlenet-merged-with-resnet-idea-image-classification-5e8c339d18bc>
 #tf.logging.set_verbosity(tf.logging.INFO)
+# Keras application new model example: <https://keras.io/zh/applications>
 model_choices = {'resnet50': tf.keras.applications.ResNet50,
                  'resnet101': tf.keras.applications.ResNet101,
                  'resnet152': tf.keras.applications.ResNet152,
