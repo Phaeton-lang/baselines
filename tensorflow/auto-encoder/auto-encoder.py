@@ -2,7 +2,10 @@ from __future__ import absolute_import, division, print_function
 
 import tensorflow as tf
 import numpy as np
+
 import argparse
+from datetime import datetime
+import time
 
 """
 Auto-Encoder Example.
@@ -28,24 +31,31 @@ if args.lms:
 
 # MNIST Dataset parameters.
 # data features (img shape: 28*28).
-img_h, img_w = 28, 28
+img_h, img_w = 224, 224
 num_features = img_h*img_w
 
 # Training parameters.
 learning_rate = 0.01
 training_steps = 10
-batch_size = 256
+batch_size = 512
 display_step = 1
 
 # Network Parameters
 # 1st layer num features.
 num_hidden_1 = 128
+#num_hidden_1 = 256
 # 2nd layer num features (the latent dim).
 num_hidden_2 = 64
 
+"""
 # Prepare MNIST data.
 from tensorflow.keras.datasets import mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
+"""
+
+num_imgs = 5000
+x_train = np.random.randn(num_imgs, img_h, img_w).astype(np.float32)
+y_train = np.random.randn(num_imgs).astype(np.float32)
 
 # x_train shape: (60000, 28, 28)
 # y_train shape: (60000,)
@@ -53,16 +63,17 @@ print('x_train shape: {}'.format(x_train.shape))
 print('y_train shape: {}'.format(y_train.shape))
 
 # Convert to float32.
-x_train, x_test = x_train.astype(np.float32), x_test.astype(np.float32)
+x_train = x_train.astype(np.float32)
 # Flatten images to 1-D vector of 784 features (28*28).
-x_train, x_test = x_train.reshape([-1, num_features]), x_test.reshape([-1, num_features])
+x_train = x_train.reshape([-1, num_features])
 # Normalize images value from [0, 255] to [0, 1].
-x_train, x_test = x_train / 255., x_test / 255.
+x_train = x_train / 255.
 
 
 # Use tf.data API to shuffle and batch data.
 train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train))
-train_data = train_data.repeat().shuffle(10000).batch(batch_size).prefetch(batch_size)
+shuffle_size = int(num_imgs/10)
+train_data = train_data.repeat().shuffle(shuffle_size).batch(batch_size).prefetch(batch_size)
 
 # Store layers weight & bias
 # A random value generator to initialize weights.
@@ -125,12 +136,22 @@ def run_optimization(x):
     optimizer.apply_gradients(zip(gradients, trainable_variables))
     return loss
 
+# miliseconds
+print(datetime.now().timetz())
+time_list = []
+# time in ms
+cur_time = int(round(time.time()*1000))
 # Run training for the given number of steps.
 for step, (batch_x, _) in enumerate(train_data.take(training_steps + 1)):
     # Run the optimization.
     print('batch_x shape: {}'.format(batch_x.shape))
     loss = run_optimization(batch_x)
+    next_time = int(round(time.time()*1000))
+    time_list.append(next_time - cur_time)
+    cur_time = next_time
     if step % display_step == 0:
         print("step: %i, loss: %f" % (step, loss))
         print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
         print('bytes in use(MB): {}'.format(tf.experimental.get_bytes_in_use(0)/1024.0/1024.0))
+
+print('throughput: {} ms!!!'.format(np.average(np.array(time_list))))
