@@ -4,47 +4,6 @@ import argparse
 from datetime import datetime
 import time
 
-img_h, img_w = 224, 224
-
-num_classes = 100 # 0 to 9 digits
-num_features = img_h*img_w # 28*28
-
-# Training parameters.
-learning_rate = 0.01
-training_steps = 5
-batch_size = 256
-display_step = 1
-
-# Prepare MNIST data.
-# x_train shape: (60000, 28, 28)
-# y_train shape: (60000,)
-# x_test shape: (10000, 28, 28)
-# y_test shape: (10000,)
-#from tensorflow.keras.datasets import mnist
-#(x_train, y_train), (x_test, y_test) = mnist.load_data()
-
-x_train = np.random.randn(10000, img_h, img_w).astype(np.int32)
-y_train = np.random.randn(10000).astype(np.int32)
-
-print('x_train shape: {}'.format(x_train.shape))
-print('y_train shape: {}'.format(y_train.shape))
-
-# Convert to float32.
-x_train = np.array(x_train, np.float32)
-# Flatten images to 1-D vector of 784 features (28*28).
-x_train = x_train.reshape([-1, num_features])
-# Normalize images value from [0, 255] to [0, 1].
-x_train = x_train / 255.
-
-# Use tf.data API to shuffle and batch data.
-train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train))
-train_data = train_data.repeat().shuffle(5000).batch(batch_size).prefetch(1)
-
-# Weight of shape [784, 10], the 28*28 image features, and total number of classes.
-W = tf.Variable(tf.ones([num_features, num_classes]), name="weight")
-# Bias of shape [10], the total number of classes.
-b = tf.Variable(tf.zeros([num_classes]), name="bias")
-
 parser = argparse.ArgumentParser()
 # LMS parameters
 lms_group = parser.add_mutually_exclusive_group(required=False)
@@ -58,6 +17,49 @@ args = parser.parse_args()
 if args.lms:
     tf.config.experimental.set_lms_enabled(True)
     tf.experimental.get_peak_bytes_active(0)
+
+img_h, img_w = 300, 300
+
+num_classes = 100 # 0 to 9 digits
+num_features = img_h*img_w # 28*28
+
+# Training parameters.
+learning_rate = 0.01
+training_steps = 5
+batch_size = 8192
+display_step = 1
+
+# Prepare MNIST data.
+# x_train shape: (60000, 28, 28)
+# y_train shape: (60000,)
+# x_test shape: (10000, 28, 28)
+# y_test shape: (10000,)
+#from tensorflow.keras.datasets import mnist
+#(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+num_imgs = 10000
+x_train = np.random.randn(num_imgs, img_h, img_w).astype(np.int32)
+y_train = np.random.randn(num_imgs).astype(np.int32)
+
+print('x_train shape: {}'.format(x_train.shape))
+print('y_train shape: {}'.format(y_train.shape))
+
+# Convert to float32.
+x_train = np.array(x_train, np.float32)
+# Flatten images to 1-D vector of 784 features (28*28).
+x_train = x_train.reshape([-1, num_features])
+# Normalize images value from [0, 255] to [0, 1].
+x_train = x_train / 255.
+
+# Use tf.data API to shuffle and batch data.
+train_data = tf.data.Dataset.from_tensor_slices((x_train, y_train))
+shuffle_size = int(num_imgs / 10)
+train_data = train_data.repeat().shuffle(shuffle_size).batch(batch_size).prefetch(1)
+
+# Weight of shape [784, 10], the 28*28 image features, and total number of classes.
+W = tf.Variable(tf.ones([num_features, num_classes]), name="weight")
+# Bias of shape [10], the total number of classes.
+b = tf.Variable(tf.zeros([num_classes]), name="bias")
 
 # Logistic regression (Wx + b).
 def logistic_regression(x):
@@ -91,14 +93,21 @@ def run_optimization(x, y):
 
     # Compute gradients.
     gradients = g.gradient(loss, [W, b])
-
     # Update W and b following gradients.
     optimizer.apply_gradients(zip(gradients, [W, b]))
 
+# miliseconds
+print(datetime.now().timetz())
+time_list = []
+# time in ms
+cur_time = int(round(time.time()*1000))
 # Run training for the given number of steps.
 for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
     # Run the optimization to update W and b values.
     run_optimization(batch_x, batch_y)
+    next_time = int(round(time.time()*1000))
+    time_list.append(next_time - cur_time)
+    cur_time = next_time
 
     if step % display_step == 0:
         pred = logistic_regression(batch_x)
@@ -106,5 +115,6 @@ for step, (batch_x, batch_y) in enumerate(train_data.take(training_steps), 1):
         acc = accuracy(pred, batch_y)
         print("step: %i, loss: %f, accuracy: %f" % (step, loss, acc))
         print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
-        print('bytes in use(MB): {}'.format(tf.experimental.get_bytes_in_use(0)/1024.0/1024.0))
+        #print('bytes in use(MB): {}'.format(tf.experimental.get_bytes_in_use(0)/1024.0/1024.0))
 
+print('throughput: {} ms!!!'.format(np.average(np.array(time_list))))

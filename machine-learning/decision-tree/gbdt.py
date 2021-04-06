@@ -30,7 +30,7 @@ if args.lms:
     tf.config.experimental.set_lms_enabled(True)
     tf.experimental.get_peak_bytes_active(0)
 
-img_h, img_w = 32, 32
+img_h, img_w = 224, 224
 num_features = img_h*img_w
 # NOTE: boosted_trees.py, for now pruning is not supported with multi class!!!
 # So num_classes can only be binary class.
@@ -46,9 +46,9 @@ print('===> x_train shape: {}'.format(x_train.shape))
 print('===> y_train shape: {}'.format(y_train.shape))
 
 # Training parameters.
-max_steps = 10
+max_steps = 5
 batch_size = 512
-learning_rate = 1.0
+learning_rate = 0.1
 l1_regul = 0.0
 l2_regul = 0.1
 
@@ -72,7 +72,7 @@ feature_columns = [tf.feature_column.numeric_column(key='x', shape=(num_features
 # GBDT parameters.
 num_batches_per_layer = 1000
 num_trees = 10
-max_depth = 4
+max_depth = 16
 
 gbdt_classifier = tf.estimator.BoostedTreesClassifier(
     n_batches_per_layer=num_batches_per_layer,
@@ -85,9 +85,13 @@ gbdt_classifier = tf.estimator.BoostedTreesClassifier(
     l2_regularization=l2_regul
 )
 
-print('===========> reach here!!! before train!!!')
+print(datetime.now().timetz())
+# time in ms
+cur_time = int(round(time.time()*1000))
 gbdt_classifier.train(train_input_fn, max_steps=max_steps)
-print('===========> reach here!!! after train!!!')
+next_time = int(round(time.time()*1000))
+
 print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
 print('bytes in use(MB): {}'.format(tf.experimental.get_bytes_in_use(0)/1024.0/1024.0))
+print('throughput: {} ms!!!'.format(next_time - cur_time))
 

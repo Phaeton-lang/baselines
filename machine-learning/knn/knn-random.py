@@ -12,7 +12,8 @@ REFs:
 - https://zhuanlan.zhihu.com/p/30210438
 """
 
-def random_gen_dataset(num_points=5000, num_kinds_of_features=100):
+# variable num_points: 4096, 8192, 10240
+def random_gen_dataset(num_points=10240, num_kinds_of_features=128):
     label_set = ['label'+str(i) for i in range(num_kinds_of_features)]
     # Input data points: [[4.7 3.2 1.3 0.2], [4.6 3.1 1.5 0.2], ...]
     # Original iris shape: (150, 4).
@@ -45,11 +46,9 @@ def random_gen_dataset(num_points=5000, num_kinds_of_features=100):
 
     return train_x, test_x, train_y, test_y, label_set
 
-train_x, test_x, train_y, test_y, label_set = random_gen_dataset()
-k = 10
 
 # knn has no training process!!!
-def prediction(args, train_x, test_x, train_y, k, num_itreations=500):
+def prediction(args, train_x, test_x, train_y, k, num_itreations=16):
     if args.lms:
         tf.config.experimental.set_lms_enabled(True)
         tf.experimental.get_peak_bytes_active(0)
@@ -69,7 +68,6 @@ def prediction(args, train_x, test_x, train_y, k, num_itreations=500):
         time_list.append(next_time - cur_time)
         cur_time = next_time
         print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
-        print('bytes in use(MB): {}'.format(tf.experimental.get_bytes_in_use(0)/1024.0/1024.0))
     print('throughput: {} ms!!!'.format(np.average(np.array(time_list))))
 
 
@@ -83,4 +81,6 @@ if __name__ == '__main__':
                            help='Disable LMS (Default)')
     parser.set_defaults(lms=False)
     args = parser.parse_args()
+    train_x, test_x, train_y, test_y, label_set = random_gen_dataset()
+    k = 16
     prediction(args, train_x, test_x, train_y, k)
