@@ -88,6 +88,8 @@ class Generator(Model):
             self.fc1 = layers.Dense(56 * 56 * 128)
         elif img_h == 300:
             self.fc1 = layers.Dense(75 * 75 * 128)
+        elif img_h == 296:
+            self.fc1 = layers.Dense(74 * 74 * 128)
         self.bn1 = layers.BatchNormalization()
         self.conv2tr1 = layers.Conv2DTranspose(64, 5, strides=2, padding='SAME')
         self.bn2 = layers.BatchNormalization()
@@ -114,11 +116,15 @@ class Generator(Model):
         elif img_h == 300:
             # New shape: (batch, 75, 75, 128)
             x = tf.reshape(x, shape=[-1, 75, 75, 128])
+        elif img_h == 296:
+            # New shape: (batch, 74, 74, 128)
+            x = tf.reshape(x, shape=[-1, 74, 74, 128])
         # Deconvolution, image shape: (batch, 14, 14, 64)
         # Deconvolution, image shape: (batch, 16, 16, 64)
         # Deconvolution, image shape: (batch, 64, 64, 64)
         # Deconvolution, image shape: (batch, 112, 112, 64)
         # Deconvolution, image shape: (batch, 150, 150, 64)
+        # Deconvolution, image shape: (batch, 148, 148, 64)
         x = self.conv2tr1(x)
         x = self.bn2(x, training=is_training)
         x = tf.nn.leaky_relu(x)
@@ -127,6 +133,7 @@ class Generator(Model):
         # Deconvolution, image shape: (batch, 128, 128, 1)
         # Deconvolution, image shape: (batch, 224, 224, 1)
         # Deconvolution, image shape: (batch, 300, 300, 1)
+        # Deconvolution, image shape: (batch, 296, 296, 1)
         x = self.conv2tr2(x)
         x = tf.nn.tanh(x)
         return x

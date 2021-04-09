@@ -1,24 +1,23 @@
 #!/bin/bash
 
-#python lstm.py --no-lms 256 32
+#python gan.py --no-lms 256 32
 
-net=lstm
-SRC_FILE=lstm.py
+net=gan
 data_scale_list=(
-32
-#224
+#32
+224
 #300
 )
 batch_list=(
 #1
 #2
 #4
-#8
-#16
-#24
-256
-512
-864
+8
+16
+24
+#256
+#512
+#864
 #1024
 #2048
 #4096
@@ -29,6 +28,6 @@ for ds in ${data_scale_list[@]};
 do
     for bs in ${batch_list[@]};
     do
-        python lstm.py --no-lms ${bs} ${ds} 2>&1 | tee nolms-${net}-${ds}-${bs}.log
+        python gan.py --no-lms ${bs} ${ds} 2>&1 | tee nolms-${net}-${ds}-${bs}.log
     done
 done

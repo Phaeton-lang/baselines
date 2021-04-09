@@ -48,7 +48,7 @@ num_input = img_h # number of sequences.
 timesteps = img_w # timesteps.
 #num_units = 32 # number of neurons for the LSTM layer.
 #num_units = 256 # number of neurons for the LSTM layer.
-num_units = 8192 # number of neurons for the LSTM layer.
+num_units = 4096 # number of neurons for the LSTM layer.
 
 """
 # Prepare MNIST data.
