@@ -1,2 +1,2 @@
 #!/bin/bash
-python bi-rnn.py --no-lms
+python bi-rnn.py --no-lms 256 32

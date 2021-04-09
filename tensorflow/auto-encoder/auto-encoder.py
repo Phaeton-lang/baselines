@@ -17,11 +17,11 @@ REFs: https://github.com/aymericdamien/TensorFlow-Examples
 
 parser = argparse.ArgumentParser()
 # LMS parameters
-lms_group = parser.add_mutually_exclusive_group(required=False)
-lms_group.add_argument('--lms', dest='lms', action='store_true',
-                       help='Enable LMS')
-lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                       help='Disable LMS (Default)')
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
+parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
+parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -31,21 +31,21 @@ if args.lms:
 
 # MNIST Dataset parameters.
 # data features (img shape: 28*28).
-img_h, img_w = 224, 224
+img_h, img_w = args.height_width, args.height_width
 num_features = img_h*img_w
 
 # Training parameters.
 learning_rate = 0.01
 training_steps = 10
-batch_size = 512
+batch_size = args.batch_size
 display_step = 1
 
 # Network Parameters
 # 1st layer num features.
-num_hidden_1 = 128
-#num_hidden_1 = 256
+#num_hidden_1 = 128
+num_hidden_1 = 3072
 # 2nd layer num features (the latent dim).
-num_hidden_2 = 64
+num_hidden_2 = 1024
 
 """
 # Prepare MNIST data.

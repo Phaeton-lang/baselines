@@ -18,11 +18,11 @@ REFs: https://github.com/aymericdamien/TensorFlow-Examples
 
 parser = argparse.ArgumentParser()
 # LMS parameters
-lms_group = parser.add_mutually_exclusive_group(required=False)
-lms_group.add_argument('--lms', dest='lms', action='store_true',
-                       help='Enable LMS')
-lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                       help='Disable LMS (Default)')
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
+parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
+parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -34,7 +34,7 @@ if args.lms:
 # data features (img shape: 28*28).
 #img_h, img_w = 28, 28
 #img_h, img_w = 32, 32
-img_h, img_w = 128, 128
+img_h, img_w = args.height_width, args.height_width
 #img_h, img_w = 224, 224
 num_features = img_h*img_w
 
@@ -42,7 +42,7 @@ num_features = img_h*img_w
 lr_generator = 0.0002
 lr_discriminator = 0.0002
 training_steps = 10
-batch_size = 64
+batch_size = args.batch_size
 display_step = 1
 
 # Network parameters.
@@ -86,6 +86,8 @@ class Generator(Model):
             self.fc1 = layers.Dense(32 * 32 * 128)
         elif img_h == 224:
             self.fc1 = layers.Dense(56 * 56 * 128)
+        elif img_h == 300:
+            self.fc1 = layers.Dense(75 * 75 * 128)
         self.bn1 = layers.BatchNormalization()
         self.conv2tr1 = layers.Conv2DTranspose(64, 5, strides=2, padding='SAME')
         self.bn2 = layers.BatchNormalization()
@@ -109,10 +111,14 @@ class Generator(Model):
         elif img_h == 224:
             # New shape: (batch, 56, 56, 128)
             x = tf.reshape(x, shape=[-1, 56, 56, 128])
+        elif img_h == 300:
+            # New shape: (batch, 75, 75, 128)
+            x = tf.reshape(x, shape=[-1, 75, 75, 128])
         # Deconvolution, image shape: (batch, 14, 14, 64)
         # Deconvolution, image shape: (batch, 16, 16, 64)
         # Deconvolution, image shape: (batch, 64, 64, 64)
         # Deconvolution, image shape: (batch, 112, 112, 64)
+        # Deconvolution, image shape: (batch, 150, 150, 64)
         x = self.conv2tr1(x)
         x = self.bn2(x, training=is_training)
         x = tf.nn.leaky_relu(x)
@@ -120,6 +126,7 @@ class Generator(Model):
         # Deconvolution, image shape: (batch, 32, 32, 1)
         # Deconvolution, image shape: (batch, 128, 128, 1)
         # Deconvolution, image shape: (batch, 224, 224, 1)
+        # Deconvolution, image shape: (batch, 300, 300, 1)
         x = self.conv2tr2(x)
         x = tf.nn.tanh(x)
         return x

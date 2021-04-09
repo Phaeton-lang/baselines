@@ -17,11 +17,11 @@ REFs: https://github.com/aymericdamien/TensorFlow-Examples
 
 parser = argparse.ArgumentParser()
 # LMS parameters
-lms_group = parser.add_mutually_exclusive_group(required=False)
-lms_group.add_argument('--lms', dest='lms', action='store_true',
-                       help='Enable LMS')
-lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                       help='Disable LMS (Default)')
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
+parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
+parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -33,13 +33,13 @@ if args.lms:
 # total classes (0-9 digits).
 num_classes = 100
 # data features (img shape: 28*28).
-img_h, img_w = 128, 128
+img_h, img_w = args.height_width, args.height_width
 num_features = img_h*img_w
 
 # Training Parameters
 learning_rate = 0.001
 training_steps = 10
-batch_size = 256
+batch_size = args.batch_size
 display_step = 1
 
 # Network Parameters
@@ -47,7 +47,7 @@ display_step = 1
 num_input = img_h # number of sequences.
 timesteps = img_w # timesteps.
 #num_units = 32 # number of neurons for the LSTM layer.
-num_units = 256 # number of neurons for the LSTM layer.
+num_units = 5120 # number of neurons for the LSTM layer.
 
 """
 # Prepare MNIST data.
