@@ -15,6 +15,8 @@ to a lower latent space and then reconstruct them.
 REFs: https://github.com/aymericdamien/TensorFlow-Examples
 """
 
+# NOTE: for different testcases, enable or disable 'lms'
+# the runtime throughput gap with differnet training steps maybe huge!!!
 parser = argparse.ArgumentParser()
 # LMS parameters
 #lms_group = parser.add_mutually_exclusive_group(required=False)
@@ -22,6 +24,7 @@ parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
 parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
 parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
 parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
+parser.add_argument('steps', type=int,  help="training steps, e.g., 10")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -36,16 +39,19 @@ num_features = img_h*img_w
 
 # Training parameters.
 learning_rate = 0.01
-training_steps = 10
+training_steps = args.steps
 batch_size = args.batch_size
 display_step = 1
 
 # Network Parameters
 # 1st layer num features.
 #num_hidden_1 = 128
+#num_hidden_1 = 4096
 num_hidden_1 = 3072
+#num_hidden_1 = 8192
 # 2nd layer num features (the latent dim).
 num_hidden_2 = 1024
+#num_hidden_2 = 8192
 
 """
 # Prepare MNIST data.

@@ -22,6 +22,7 @@ parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
 parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
 parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
 parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
+parser.add_argument('steps', type=int,  help="training steps, e.g., 10")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -38,7 +39,7 @@ num_features = img_h*img_w
 
 # Training Parameters
 learning_rate = 0.001
-training_steps = 10
+training_steps = args.steps
 batch_size = args.batch_size
 display_step = 1
 
@@ -47,6 +48,7 @@ display_step = 1
 num_input = img_h # number of sequences.
 timesteps = img_w # timesteps.
 #num_units = 32 # number of neurons for the LSTM layer.
+#num_units = 3072 # number of neurons for the LSTM layer.
 num_units = 5120 # number of neurons for the LSTM layer.
 
 """

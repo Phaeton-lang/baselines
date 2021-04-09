@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#python auto-encoder.py --lms 256 32
+#python auto-encoder.py --lms 256 32 10
 
 net=auto_encoder
 data_scale_list=(
@@ -29,6 +29,6 @@ for ds in ${data_scale_list[@]};
 do
     for bs in ${batch_list[@]};
     do
-        python auto-encoder.py --lms ${bs} ${ds} 2>&1 | tee lms-${net}-${ds}-${bs}.log
+        python auto-encoder.py --lms ${bs} ${ds} 10 2>&1 | tee lms-${net}-${ds}-${bs}.log
     done
 done

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#python lstm.py --lms 256 32
+#python lstm.py --lms 256 32 10
 
 net=lstm
 SRC_FILE=lstm.py
@@ -30,6 +30,6 @@ for ds in ${data_scale_list[@]};
 do
     for bs in ${batch_list[@]};
     do
-        python lstm.py --lms ${bs} ${ds} 2>&1 | tee lms-${net}-${ds}-${bs}.log
+        python lstm.py --lms ${bs} ${ds} 10 2>&1 | tee lms-${net}-${ds}-${bs}.log
     done
 done

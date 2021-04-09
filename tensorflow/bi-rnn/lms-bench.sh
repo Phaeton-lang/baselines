@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#python auto-encoder.py --lms 256 32
+#python bi-rnn.py --lms 256 32 10
 
 net=birnn
 data_scale_list=(
@@ -29,6 +29,6 @@ for ds in ${data_scale_list[@]};
 do
     for bs in ${batch_list[@]};
     do
-        python bi-rnn.py --lms ${bs} ${ds} 2>&1 | tee lms-${net}-${ds}-${bs}.log
+        python bi-rnn.py --lms ${bs} ${ds} 10 2>&1 | tee lms-${net}-${ds}-${bs}.log
     done
 done

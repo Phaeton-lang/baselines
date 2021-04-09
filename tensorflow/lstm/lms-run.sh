@@ -1,2 +1,2 @@
 #!/bin/bash
-python lstm.py --lms 4 300
+python lstm.py --lms 4 300 10
