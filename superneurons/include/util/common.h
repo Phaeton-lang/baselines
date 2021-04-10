@@ -22,9 +22,9 @@
 #include <util/superneurons_math.h>
 
 #define LIVENESS
-//#define RECOMPUTE_ON
+#define RECOMPUTE_ON
 //#define LARGER
-//#define LRU_ON
+#define LRU_ON
 //#define BLASX_MALLOC
 //#define BENCHMARK
 
