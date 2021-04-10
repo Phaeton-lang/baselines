@@ -1,2 +1,2 @@
 #!/bin/bash
-python knn-random.py --lms
+python knn-random.py --lms 10240 30

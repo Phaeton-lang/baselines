@@ -1,2 +1,2 @@
 #!/bin/bash
-python gbdt.py --lms
+python gbdt.py --lms 224 5

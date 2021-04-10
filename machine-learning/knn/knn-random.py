@@ -13,7 +13,7 @@ REFs:
 """
 
 # variable num_points: 4096, 8192, 10240
-def random_gen_dataset(num_points=10240, num_kinds_of_features=128):
+def random_gen_dataset(num_points=4096, num_kinds_of_features=128):
     label_set = ['label'+str(i) for i in range(num_kinds_of_features)]
     # Input data points: [[4.7 3.2 1.3 0.2], [4.6 3.1 1.5 0.2], ...]
     # Original iris shape: (150, 4).
@@ -48,7 +48,7 @@ def random_gen_dataset(num_points=10240, num_kinds_of_features=128):
 
 
 # knn has no training process!!!
-def prediction(args, train_x, test_x, train_y, k, num_itreations=16):
+def prediction(args, train_x, test_x, train_y, k, num_itreations=30):
     if args.lms:
         tf.config.experimental.set_lms_enabled(True)
         tf.experimental.get_peak_bytes_active(0)
@@ -74,13 +74,15 @@ def prediction(args, train_x, test_x, train_y, k, num_itreations=16):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     # LMS parameters
-    lms_group = parser.add_mutually_exclusive_group(required=False)
-    lms_group.add_argument('--lms', dest='lms', action='store_true',
-                           help='Enable LMS')
-    lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                           help='Disable LMS (Default)')
+    #lms_group = parser.add_mutually_exclusive_group(required=False)
+    parser.add_argument('--lms', dest='lms', action='store_true',
+                        help='Enable LMS')
+    parser.add_argument('--no-lms', dest='lms', action='store_false',
+                        help='Disable LMS (Default)')
+    parser.add_argument('num_points', type=int,  help="training steps, e.g., 10")
+    parser.add_argument('steps', type=int,  help="training steps, e.g., 10")
     parser.set_defaults(lms=False)
     args = parser.parse_args()
-    train_x, test_x, train_y, test_y, label_set = random_gen_dataset()
+    train_x, test_x, train_y, test_y, label_set = random_gen_dataset(args.num_points)
     k = 16
-    prediction(args, train_x, test_x, train_y, k)
+    prediction(args, train_x, test_x, train_y, k, args.steps)

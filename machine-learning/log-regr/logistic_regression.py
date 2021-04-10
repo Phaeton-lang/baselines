@@ -6,11 +6,14 @@ import time
 
 parser = argparse.ArgumentParser()
 # LMS parameters
-lms_group = parser.add_mutually_exclusive_group(required=False)
-lms_group.add_argument('--lms', dest='lms', action='store_true',
-                       help='Enable LMS')
-lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                       help='Disable LMS (Default)')
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true',
+                    help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false',
+                    help='Disable LMS (Default)')
+parser.add_argument('batch_size', type=int,  help="batch size, e.g., 256")
+parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
+parser.add_argument('steps', type=int,  help="training steps, e.g., 10")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -18,15 +21,15 @@ if args.lms:
     tf.config.experimental.set_lms_enabled(True)
     tf.experimental.get_peak_bytes_active(0)
 
-img_h, img_w = 300, 300
+img_h, img_w = args.height_width, args.height_width
 
 num_classes = 100 # 0 to 9 digits
 num_features = img_h*img_w # 28*28
 
 # Training parameters.
 learning_rate = 0.01
-training_steps = 5
-batch_size = 8192
+training_steps = args.steps
+batch_size = args.batch_size
 display_step = 1
 
 # Prepare MNIST data.

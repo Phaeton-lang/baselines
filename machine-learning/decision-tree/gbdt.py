@@ -18,11 +18,13 @@ REFs:
 
 parser = argparse.ArgumentParser()
 # LMS parameters
-lms_group = parser.add_mutually_exclusive_group(required=False)
-lms_group.add_argument('--lms', dest='lms', action='store_true',
-                       help='Enable LMS')
-lms_group.add_argument('--no-lms', dest='lms', action='store_false',
-                       help='Disable LMS (Default)')
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true',
+                    help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false',
+                    help='Disable LMS (Default)')
+parser.add_argument('height_width', type=int,  help="dataset scale, e.g., 32")
+parser.add_argument('steps', type=int,  help="training steps, e.g., 10")
 parser.set_defaults(lms=False)
 args = parser.parse_args()
 
@@ -30,12 +32,12 @@ if args.lms:
     tf.config.experimental.set_lms_enabled(True)
     tf.experimental.get_peak_bytes_active(0)
 
-img_h, img_w = 224, 224
+img_h, img_w = args.height_width, args.height_width
 num_features = img_h*img_w
 # NOTE: boosted_trees.py, for now pruning is not supported with multi class!!!
 # So num_classes can only be binary class.
 num_classes = 2
-num_points = 1000
+num_points = 4096
 
 x_train = np.random.randn(num_points, num_features).astype(np.int32)
 y_train = np.random.randint(num_classes, size=num_points)
@@ -46,7 +48,7 @@ print('===> x_train shape: {}'.format(x_train.shape))
 print('===> y_train shape: {}'.format(y_train.shape))
 
 # Training parameters.
-max_steps = 5
+max_steps = args.steps
 batch_size = 512
 learning_rate = 0.1
 l1_regul = 0.0
