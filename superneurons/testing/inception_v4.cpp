@@ -396,5 +396,5 @@ int main(int argc, char **argv) {
     n.setup_test(data_test, 50000 / batch_size);
     const size_t train_imgs = 50000;
     const size_t tracking_window = train_imgs / batch_size;
-    n.train(10, tracking_window, 4000);
+    n.train(1000, tracking_window, 4000);
 }
