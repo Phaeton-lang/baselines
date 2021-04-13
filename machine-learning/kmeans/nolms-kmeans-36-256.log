@@ -1,0 +1,281 @@
+2021-04-13 00:24:27.164860: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:27.727233: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.7
+2021-04-13 00:24:27.728227: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.7
+WARNING:tensorflow:From kmeans.py:40: The name tf.estimator.experimental.KMeans is deprecated. Please use tf.compat.v1.estimator.experimental.KMeans instead.
+
+WARNING:tensorflow:Using temporary folder as model directory: /tmp/tmph5lm20cn
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1635: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/training/training_util.py:236: Variable.initialized_value (from tensorflow.python.ops.variables) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use Variable.read_value. Variables in 2.X are initialized automatically both in eager and graph (inside tf.defun) contexts.
+2021-04-13 00:24:28.357028: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-04-13 00:24:28.359071: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.359584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:28.359600: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:28.359624: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:28.360702: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:28.360891: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:28.362104: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:28.362749: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:28.362777: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:28.362857: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.363407: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.363890: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+WARNING:tensorflow:From kmeans.py:35: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/training/input.py:112: BaseResourceVariable.count_up_to (from tensorflow.python.ops.resource_variable_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Prefer Dataset.range instead.
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/ops/clustering_ops.py:739: calling l2_normalize (from tensorflow.python.ops.nn_impl) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+2021-04-13 00:24:28.686876: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-04-13 00:24:28.708897: I tensorflow/core/platform/profile_utils/cpu_utils.cc:101] CPU Frequency: 3500335000 Hz
+2021-04-13 00:24:28.709244: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55691495ba30 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-04-13 00:24:28.709266: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-04-13 00:24:28.709449: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.710141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:28.710179: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:28.710201: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:28.710230: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:28.710250: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:28.710270: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:28.710289: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:28.710304: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:28.710384: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.710992: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:28.711569: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:28.711600: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:29.191639: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:29.191671: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:29.191676: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:29.191851: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:29.192480: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:29.193082: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:29.193658: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:29.195781: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55692d0d2970 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-04-13 00:24:29.195797: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN Xp COLLECTORS EDITION, Compute Capability 6.1
+WARNING:tensorflow:Training with estimator made no steps. Perhaps input is empty or misspecified.
+2021-04-13 00:24:32.987829: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:32.988063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:32.988088: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:32.988100: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:32.988114: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:32.988124: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:32.988132: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:32.988141: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:32.988148: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:32.988190: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:32.988410: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:32.988599: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:32.988621: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:32.988627: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:32.988631: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:32.988688: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:32.988922: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:32.989120: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/training/saver.py:1069: get_checkpoint_mtimes (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file utilities to get mtimes.
+2021-04-13 00:24:36.501333: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:36.501615: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:36.501642: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:36.501654: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:36.501671: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:36.501680: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:36.501689: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:36.501698: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:36.501705: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:36.501745: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:36.501970: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:36.502163: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:36.502186: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:36.502192: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:36.502196: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:36.502254: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:36.502489: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:36.502686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:39.905861: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:39.906125: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:39.906149: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:39.906161: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:39.906176: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:39.906186: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:39.906195: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:39.906204: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:39.906212: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:39.906253: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:39.906472: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:39.906661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:39.906683: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:39.906688: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:39.906691: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:39.906747: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:39.906969: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:39.907166: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:43.224167: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:43.224425: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:43.224449: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:43.224461: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:43.224476: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:43.224486: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:43.224495: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:43.224503: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:43.224511: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:43.224548: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:43.224772: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:43.224962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:43.224984: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:43.224989: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:43.224993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:43.225048: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:43.225269: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:43.225465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+WARNING:tensorflow:From /home/ljs/work-space/anaconda2/envs/wmlce_env-tf-lms/lib/python3.6/site-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+2021-04-13 00:24:46.594191: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:46.594471: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:46.594506: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:46.594530: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:46.594553: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:46.594572: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:46.594587: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:46.594599: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:46.594615: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:46.594677: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:46.594919: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:46.595113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:46.595135: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:46.595141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:46.595147: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:46.595216: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:46.595446: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:46.595659: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:50.038884: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:50.039150: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:50.039175: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:50.039187: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:50.039202: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:50.039212: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:50.039222: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:50.039231: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:50.039240: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:50.039279: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:50.039498: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:50.039686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:50.039708: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:50.039714: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:50.039717: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:50.039773: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:50.039994: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:50.040190: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:53.336723: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:53.339574: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:53.339631: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:53.339662: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:53.339698: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:53.339719: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:53.339736: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:53.339753: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:53.339766: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:53.339855: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:53.340221: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:53.340651: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:53.340682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:53.340691: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:53.340699: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:53.340797: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:53.341143: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:53.341450: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:56.560947: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:56.561208: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:56.561234: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:56.561246: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:56.561262: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:56.561271: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:56.561281: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:56.561290: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:56.561297: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:56.561337: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:56.561558: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:56.561747: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:56.561768: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:56.561773: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:56.561777: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:56.561834: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:56.562056: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:56.562252: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:24:59.819340: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:59.819608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:24:59.819633: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:24:59.819645: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:24:59.819661: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:24:59.819671: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:24:59.819680: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:24:59.819690: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:24:59.819698: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:24:59.819738: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:59.819962: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:59.820153: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:24:59.820175: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:24:59.820181: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:24:59.820185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:24:59.820243: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:59.820469: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:24:59.820667: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+==============> shape: (1024, 3888)
+00:24:28.347442
+==> peak active bytes(MB): 7.598876953125
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+==> peak active bytes(MB): 11.395263671875
+==> bytes in use(MB): 0.0
+cluster centers: [[0.01128592 0.01361854 0.02355585 ... 0.01901151 0.00811008 0.01465962]
+ [0.00615163 0.0080356  0.01581788 ... 0.00851076 0.00839986 0.02851586]
+ [0.01880347 0.01342508 0.01123314 ... 0.01955171 0.01050916 0.02042883]
+ ...
+ [0.01821913 0.00540929 0.00807542 ... 0.00827297 0.01475698 0.00787693]
+ [0.02015822 0.01198416 0.01153647 ... 0.02036982 0.00927681 0.01876346]
+ [0.01256729 0.015757   0.01723175 ... 0.01552472 0.01501005 0.02111166]]
+throughput: 3470.7 ms!!!

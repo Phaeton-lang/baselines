@@ -1,0 +1,151 @@
+2021-04-13 00:10:41.879051: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:10:42.456677: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.7
+2021-04-13 00:10:42.457684: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.7
+2021-04-13 00:10:44.280696: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-04-13 00:10:44.282860: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.283374: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:10:44.283390: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:10:44.283413: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:10:44.284517: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:10:44.284700: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:10:44.285915: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:10:44.286560: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:10:44.286589: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:10:44.286666: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.287213: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.287701: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:10:44.287955: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-04-13 00:10:44.312901: I tensorflow/core/platform/profile_utils/cpu_utils.cc:101] CPU Frequency: 3500335000 Hz
+2021-04-13 00:10:44.313389: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d8300f8e50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-04-13 00:10:44.313406: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-04-13 00:10:44.313528: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.314127: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-13 00:10:44.314148: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:10:44.314159: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-13 00:10:44.314174: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-13 00:10:44.314185: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-13 00:10:44.314195: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-13 00:10:44.314210: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-13 00:10:44.314229: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-13 00:10:44.314299: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.314912: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.315475: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-13 00:10:44.315497: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-13 00:10:44.802904: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-13 00:10:44.802936: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-13 00:10:44.802941: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-13 00:10:44.803095: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.803634: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.804145: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-13 00:10:44.804646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-13 00:10:44.806060: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d84919cf20 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-04-13 00:10:44.806072: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN Xp COLLECTORS EDITION, Compute Capability 6.1
+2021-04-13 00:10:45.115224: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+x_train shape: (10000, 64, 64)
+y_train shape: (10000,)
+00:10:44.924781
+step: 1, loss: 3.870770, accuracy: 0.677979
+peak active bytes(MB): 70.643310546875
+step: 2, loss: 3.888624, accuracy: 0.670898
+peak active bytes(MB): 71.81640625
+step: 3, loss: 3.882721, accuracy: 0.677246
+peak active bytes(MB): 72.207275390625
+step: 4, loss: 3.850961, accuracy: 0.679443
+peak active bytes(MB): 72.207275390625
+step: 5, loss: 3.859039, accuracy: 0.665771
+peak active bytes(MB): 72.207275390625
+step: 6, loss: 3.862735, accuracy: 0.683838
+peak active bytes(MB): 72.207275390625
+step: 7, loss: 3.858511, accuracy: 0.670410
+peak active bytes(MB): 72.207275390625
+step: 8, loss: 3.836921, accuracy: 0.673340
+peak active bytes(MB): 72.207275390625
+step: 9, loss: 3.844430, accuracy: 0.675781
+peak active bytes(MB): 72.207275390625
+step: 10, loss: 3.850896, accuracy: 0.676514
+peak active bytes(MB): 72.207275390625
+step: 11, loss: 3.793670, accuracy: 0.674561
+peak active bytes(MB): 72.207275390625
+step: 12, loss: 3.887481, accuracy: 0.676025
+peak active bytes(MB): 72.207275390625
+step: 13, loss: 3.782104, accuracy: 0.673828
+peak active bytes(MB): 72.207275390625
+step: 14, loss: 3.847478, accuracy: 0.680420
+peak active bytes(MB): 72.207275390625
+step: 15, loss: 3.805429, accuracy: 0.671387
+peak active bytes(MB): 72.207275390625
+step: 16, loss: 3.813750, accuracy: 0.676270
+peak active bytes(MB): 72.207275390625
+step: 17, loss: 3.813154, accuracy: 0.668701
+peak active bytes(MB): 72.207275390625
+step: 18, loss: 3.793758, accuracy: 0.682373
+peak active bytes(MB): 72.207275390625
+step: 19, loss: 3.787145, accuracy: 0.667725
+peak active bytes(MB): 72.207275390625
+step: 20, loss: 3.815759, accuracy: 0.681152
+peak active bytes(MB): 72.207275390625
+step: 21, loss: 3.761504, accuracy: 0.673584
+peak active bytes(MB): 72.207275390625
+step: 22, loss: 3.797291, accuracy: 0.672363
+peak active bytes(MB): 72.207275390625
+step: 23, loss: 3.760616, accuracy: 0.670166
+peak active bytes(MB): 72.207275390625
+step: 24, loss: 3.790741, accuracy: 0.684570
+peak active bytes(MB): 72.207275390625
+step: 25, loss: 3.748857, accuracy: 0.670898
+peak active bytes(MB): 72.207275390625
+step: 26, loss: 3.765704, accuracy: 0.676758
+peak active bytes(MB): 72.207275390625
+step: 27, loss: 3.785708, accuracy: 0.676025
+peak active bytes(MB): 72.207275390625
+step: 28, loss: 3.719560, accuracy: 0.669434
+peak active bytes(MB): 72.207275390625
+step: 29, loss: 3.773909, accuracy: 0.677002
+peak active bytes(MB): 72.207275390625
+step: 30, loss: 3.740428, accuracy: 0.676025
+peak active bytes(MB): 72.207275390625
+step: 31, loss: 3.754082, accuracy: 0.679199
+peak active bytes(MB): 72.207275390625
+step: 32, loss: 3.719264, accuracy: 0.666992
+peak active bytes(MB): 72.207275390625
+step: 33, loss: 3.725889, accuracy: 0.684814
+peak active bytes(MB): 72.207275390625
+step: 34, loss: 3.742095, accuracy: 0.668213
+peak active bytes(MB): 72.207275390625
+step: 35, loss: 3.708727, accuracy: 0.673340
+peak active bytes(MB): 72.207275390625
+step: 36, loss: 3.739740, accuracy: 0.677734
+peak active bytes(MB): 72.207275390625
+step: 37, loss: 3.708535, accuracy: 0.672119
+peak active bytes(MB): 72.207275390625
+step: 38, loss: 3.698110, accuracy: 0.683350
+peak active bytes(MB): 72.207275390625
+step: 39, loss: 3.708647, accuracy: 0.669922
+peak active bytes(MB): 72.207275390625
+step: 40, loss: 3.679596, accuracy: 0.674072
+peak active bytes(MB): 72.207275390625
+step: 41, loss: 3.712348, accuracy: 0.676025
+peak active bytes(MB): 72.207275390625
+step: 42, loss: 3.696000, accuracy: 0.678711
+peak active bytes(MB): 72.207275390625
+step: 43, loss: 3.672025, accuracy: 0.670166
+peak active bytes(MB): 72.207275390625
+step: 44, loss: 3.676098, accuracy: 0.671875
+peak active bytes(MB): 72.207275390625
+step: 45, loss: 3.669192, accuracy: 0.681152
+peak active bytes(MB): 72.207275390625
+step: 46, loss: 3.687190, accuracy: 0.674316
+peak active bytes(MB): 72.207275390625
+step: 47, loss: 3.638664, accuracy: 0.667725
+peak active bytes(MB): 72.207275390625
+step: 48, loss: 3.677852, accuracy: 0.682861
+peak active bytes(MB): 72.207275390625
+step: 49, loss: 3.659897, accuracy: 0.670654
+peak active bytes(MB): 72.207275390625
+step: 50, loss: 3.633311, accuracy: 0.673828
+peak active bytes(MB): 72.207275390625
+throughput: 71.04 ms!!!

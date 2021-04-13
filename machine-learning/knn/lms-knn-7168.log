@@ -1,0 +1,111 @@
+2021-04-12 22:24:35.425310: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-12 22:24:35.893268: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.7
+2021-04-12 22:24:35.894326: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.7
+2021-04-12 22:24:36.450509: E bazel-out/k8-py2-opt/bin/tensorflow/python/pywrap_tensorflow_internal.cc:5187] (GetBFCAllocatorStats) No GPU device registered. Skipping getting stats
+
+2021-04-12 22:24:36.450550: E bazel-out/k8-py2-opt/bin/tensorflow/python/pywrap_tensorflow_internal.cc:5388] (getPeakBytesActive) - Could not retrieve BFC Allocator Stats
+2021-04-12 22:24:36.452863: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2021-04-12 22:24:36.454995: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.455518: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-12 22:24:36.455543: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-12 22:24:36.455578: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-12 22:24:36.456593: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-12 22:24:36.456786: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-12 22:24:36.457868: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-12 22:24:36.458419: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-12 22:24:36.458455: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-12 22:24:36.458545: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.459098: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.459587: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-12 22:24:36.459837: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-04-12 22:24:36.465107: I tensorflow/core/platform/profile_utils/cpu_utils.cc:101] CPU Frequency: 3500335000 Hz
+2021-04-12 22:24:36.465418: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x564a79eaee50 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-04-12 22:24:36.465439: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2021-04-12 22:24:36.465570: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.466156: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:06:00.0 name: TITAN Xp COLLECTORS EDITION computeCapability: 6.1
+coreClock: 1.582GHz coreCount: 30 deviceMemorySize: 11.91GiB deviceMemoryBandwidth: 510.07GiB/s
+2021-04-12 22:24:36.466182: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-12 22:24:36.466196: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2021-04-12 22:24:36.466211: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2021-04-12 22:24:36.466224: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2021-04-12 22:24:36.466238: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2021-04-12 22:24:36.466251: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2021-04-12 22:24:36.466264: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2021-04-12 22:24:36.466313: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.466941: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.467509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2021-04-12 22:24:36.467537: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2021-04-12 22:24:36.956252: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-04-12 22:24:36.956281: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2021-04-12 22:24:36.956286: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2021-04-12 22:24:36.956447: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.957018: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.957543: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2021-04-12 22:24:36.958197: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11281 MB memory) -> physical GPU (device: 0, name: TITAN Xp COLLECTORS EDITION, pci bus id: 0000:06:00.0, compute capability: 6.1)
+2021-04-12 22:24:36.959467: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x564a92f52b30 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2021-04-12 22:24:36.959479: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): TITAN Xp COLLECTORS EDITION, Compute Capability 6.1
+22:24:36.450567
+==> iteration 0
+peak active bytes(MB): 4900.001220703125
+==> iteration 1
+peak active bytes(MB): 4900.001220703125
+==> iteration 2
+peak active bytes(MB): 4900.001220703125
+==> iteration 3
+peak active bytes(MB): 4945.719970703125
+==> iteration 4
+peak active bytes(MB): 4945.719970703125
+==> iteration 5
+peak active bytes(MB): 4945.719970703125
+==> iteration 6
+peak active bytes(MB): 4945.719970703125
+==> iteration 7
+peak active bytes(MB): 4949.548095703125
+==> iteration 8
+peak active bytes(MB): 4949.548095703125
+==> iteration 9
+peak active bytes(MB): 4949.548095703125
+==> iteration 10
+peak active bytes(MB): 4949.548095703125
+==> iteration 11
+peak active bytes(MB): 4949.548095703125
+==> iteration 12
+peak active bytes(MB): 4949.548095703125
+==> iteration 13
+peak active bytes(MB): 4949.548095703125
+==> iteration 14
+peak active bytes(MB): 4949.548095703125
+==> iteration 15
+peak active bytes(MB): 4949.548095703125
+==> iteration 16
+peak active bytes(MB): 4949.548095703125
+==> iteration 17
+peak active bytes(MB): 4949.548095703125
+==> iteration 18
+peak active bytes(MB): 4949.548095703125
+==> iteration 19
+peak active bytes(MB): 4949.602783203125
+==> iteration 20
+peak active bytes(MB): 4949.602783203125
+==> iteration 21
+peak active bytes(MB): 4949.602783203125
+==> iteration 22
+peak active bytes(MB): 4949.602783203125
+==> iteration 23
+peak active bytes(MB): 4949.602783203125
+==> iteration 24
+peak active bytes(MB): 4949.602783203125
+==> iteration 25
+peak active bytes(MB): 4949.602783203125
+==> iteration 26
+peak active bytes(MB): 4949.602783203125
+==> iteration 27
+peak active bytes(MB): 4949.602783203125
+==> iteration 28
+peak active bytes(MB): 4949.602783203125
+==> iteration 29
+peak active bytes(MB): 4949.602783203125
+throughput: 59.1 ms!!!
