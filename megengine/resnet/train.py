@@ -25,7 +25,6 @@ import megengine.optimizer as optim
 
 logging = megengine.logger.get_logger()
 
-
 def main():
     parser = argparse.ArgumentParser(description="MegEngine ImageNet Training")
     parser.add_argument("-d", "--data", metavar="DIR", help="path to imagenet dataset")
@@ -50,9 +49,9 @@ def main():
     )
     parser.add_argument(
         "--epochs",
-        default=90,
+        default=10,
         type=int,
-        help="number of total epochs to run (default: 90)",
+        help="number of total epochs to run (default: 10)",
     )
     parser.add_argument(
         "-b",
@@ -84,13 +83,18 @@ def main():
         default=20,
         type=int,
         metavar="N",
-        help="print frequency (default: 10)",
+        help="print frequency (default: 20)",
     )
 
     parser.add_argument("--dist-addr", default="localhost")
     parser.add_argument("--dist-port", default=23456, type=int)
     parser.add_argument("--world-size", default=1, type=int)
     parser.add_argument("--rank", default=0, type=int)
+    parser.add_argument(
+        "--enable-dtr",
+        dest="enable_dtr",
+        action="store_true",
+        help="Enable DTR")
 
     args = parser.parse_args()
 
@@ -126,6 +130,10 @@ def main():
 
 def worker(rank, world_size, ngpus_per_node, args):
     # pylint: disable=too-many-statements
+    # enable DTR
+    if args.enable_dtr:
+        from megengine.utils.dtr import DTR
+        ds = DTR(memory_budget=5*1024**3)
     if rank == 0:
         os.makedirs(os.path.join(args.save, args.arch), exist_ok=True)
         megengine.logger.set_log_file(os.path.join(args.save, args.arch, "log.txt"))
