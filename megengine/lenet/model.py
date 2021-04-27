@@ -5,8 +5,10 @@ class LeNet32x32(M.Module):
     def __init__(self):
         super().__init__()
         # single channel image, two 5x5 Conv + ReLU + Pool
+        # Conv2d(1, 6, kernel_size=(5, 5))
         self.conv1 = M.Conv2d(1, 6, 5)
         self.relu1 = M.ReLU()
+        # MaxPool2d(kernel_size=2, stride=2, padding=0)
         self.pool1 = M.MaxPool2d(2, 2)
         self.conv2 = M.Conv2d(6, 16, 5)
         self.relu2 = M.ReLU()
