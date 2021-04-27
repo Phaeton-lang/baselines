@@ -19,10 +19,17 @@ parser.add_argument(
     help="number of total steps to run (default: 10)",
 )
 parser.add_argument(
+    "--hw",
+    default=32,
+    type=int,
+    choices=[32, 224],
+    help="height width of input image (default: 32)",
+)
+parser.add_argument(
     "-b",
     "--batch-size",
     metavar="SIZE",
-    default=64,
+    default=256,
     type=int,
     help="batch size for single GPU (default: 64)",
 )
@@ -45,12 +52,15 @@ if args.enable_dtr:
     from megengine.utils.dtr import DTR
     ds = DTR(memory_budget=args.mem_budget*1024**3)
 
-model = lenet_model.LeNet()
-print(model)
 batch_size = args.batch_size
-image = mge.tensor(np.random.random((batch_size, 1, 32, 32)))
+image = mge.tensor(np.random.random((batch_size, 1, args.hw, args.hw)))
 label = mge.tensor(np.random.randint(100, size=(batch_size,)))
 
+if args.hw == 32:
+    model = lenet_model.LeNet32x32()
+elif args.hw == 224:
+    model = lenet_model.LeNet224x224()
+print(model)
 gm=ad.GradManager().attach(model.parameters())
 opt=optim.SGD(model.parameters(), lr=0.0125, momentum=0.9, weight_decay=1e-4)
 
