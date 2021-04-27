@@ -36,7 +36,7 @@ parser.add_argument(
     dest="mem_budget",
     default=5,
     type=float,
-    help="memory budget for DTR, measured in GB (default: 5)",
+    help="memory budget for DTR, measured in GB (default: 5.0)",
 )
 
 args = parser.parse_args()

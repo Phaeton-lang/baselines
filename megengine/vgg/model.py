@@ -1,6 +1,10 @@
 import megengine.module as M
 import megengine.functional as F
 
+# Copyright (c) 2021 JSON LEE, lijiansong@ict.ac.cn.
+# All rights reserved.
+# VGG with cifar-10 dataset, model architecture refers to:
+# http://torch.ch/blog/2015/07/30/cifar.html
 class VGG(M.Module):
     def __init__(self):
         super().__init__()
