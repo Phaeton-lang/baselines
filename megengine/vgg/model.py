@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (c) 2021 JSON LEE, lijiansong@ict.ac.cn.
 # All rights reserved.
 

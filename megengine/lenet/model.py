@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import megengine.module as M
 import megengine.functional as F
 
