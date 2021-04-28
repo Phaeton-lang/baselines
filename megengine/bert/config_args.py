@@ -23,7 +23,10 @@ def get_args():
     )
 
     parser.add_argument(
-        "--pretrained_bert", required=True, type=str, help="pretrained bert name"
+        "--pretrained_bert",
+        type=str,
+        default="uncased_L-12_H-768_A-12",
+        help="pretrained bert name (default: uncased_L-12_H-768_A-12)"
     )
 
     parser.add_argument(
@@ -34,6 +37,7 @@ def get_args():
         "Sequences longer than this will be truncated, and sequences shorter \n"
         "than this will be padded.",
     )
+
     parser.add_argument(
         "--do_lower_case",
         default=False,
@@ -75,6 +79,26 @@ def get_args():
         default="./check_point_last.pkl",
         type=str,
         help="the path to save model",
+    )
+
+    parser.add_argument(
+        "--enable-dtr",
+        dest="enable_dtr",
+        action="store_true",
+        help="Enable DTR")
+
+    parser.add_argument(
+        "--memory-budget",
+        dest="mem_budget",
+        default=5,
+        type=float,
+        help="memory budget for DTR, measured in GB (default: 5.0)",
+    )
+    parser.add_argument(
+        "--steps",
+        default=25,
+        type=int,
+        help="Total steps for training (default: 25).",
     )
 
     return parser.parse_args()
