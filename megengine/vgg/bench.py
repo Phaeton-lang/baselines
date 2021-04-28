@@ -1,3 +1,6 @@
+# Copyright (c) 2021 JSON LEE, lijiansong@ict.ac.cn.
+# All rights reserved.
+
 import argparse
 import numpy as np
 from datetime import datetime
