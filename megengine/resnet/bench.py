@@ -68,6 +68,8 @@ for i in range(args.steps):
         logits=model(image)
         loss=F.nn.cross_entropy(logits, label)
         gm.backward(loss)
+        total, free = mge.get_mem_status_bytes()
+        print('iter = {}, used bytes(/MB) = {}'.format(i+1, float(total - free)/1024.0/1024.0))
         opt.step().clear_grad()
 
         next_time = int(round(time.time()*1000))

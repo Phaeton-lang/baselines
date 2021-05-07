@@ -85,6 +85,9 @@ def train(dataloader, net, opt):
         loss, logits, label_ids = net_train(
             input_ids, segment_ids, input_mask, label_ids, gm=gm, net=net
         )
+        total, free = mge.get_mem_status_bytes()
+        print('total(/MB): {}, free(/MB): {}'.format(total/1024.0/1024.0, free/1024.0/1024.0))
+        print('step = {}, used bytes(/MB) = {}'.format(total_steps, float(total - free)/1024.0/1024.0))
         opt.step().clear_grad()
         sum_loss += loss.mean().item()
         sum_accuracy += F.topk_accuracy(logits, label_ids) * batch_size
