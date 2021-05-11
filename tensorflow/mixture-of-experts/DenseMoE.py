@@ -1,4 +1,3 @@
-#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
 REFs: https://github.com/eminorhan/mixture-of-experts

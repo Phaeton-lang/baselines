@@ -15,10 +15,30 @@ from ConvolutionalMoE import Conv2DMoE
 from DenseMoE import DenseMoE
 #from scipy.io import savemat
 import os
+import argparse
+from datetime import datetime
+import time
 
-batch_size = 32
+parser = argparse.ArgumentParser()
+# LMS parameters
+#lms_group = parser.add_mutually_exclusive_group(required=False)
+parser.add_argument('--lms', dest='lms', action='store_true', help='Enable LMS')
+parser.add_argument('--no-lms', dest='lms', action='store_false', help='Disable LMS (Default)')
+parser.add_argument('--batch_size', type=int, default=512, help="Batch size. (Default 512)")
+parser.add_argument('--steps', type=int, default=3, help="Steps per epoch. (Default 3)")
+parser.add_argument('--epochs', type=int, default=1, help="Training epochs. (Default 1)")
+parser.add_argument('--experts', type=int, default=8, help="Num of experts. (Default 8)")
+parser.set_defaults(lms=False)
+args = parser.parse_args()
+
+if args.lms:
+    print('==> enable LMS!')
+    tf.config.experimental.set_lms_enabled(True)
+    tf.experimental.get_peak_bytes_active(0)
+
+batch_size = args.batch_size
 num_classes = 10
-epochs = 1
+epochs = args.epochs
 data_augmentation = True
 num_predictions = 20
 #which_model = 'cnn' # 'moe' or 'cnn'
@@ -37,7 +57,7 @@ y_test = keras.utils.to_categorical(y_test, num_classes)
 
 if which_model == 'moe':
     # MoE model
-    num_experts_per_filter = 2
+    num_experts_per_filter = args.experts
     model = Sequential()
     model.add(Conv2DMoE(32, num_experts_per_filter, (3, 3), expert_activation='relu', gating_activation='softmax', padding='same', input_shape=x_train.shape[1:]))
     model.add(Conv2DMoE(32, num_experts_per_filter, (3, 3), expert_activation='relu', gating_activation='softmax'))
@@ -133,9 +153,10 @@ else:
     hist = model.fit_generator(datagen.flow(x_train, y_train, batch_size=batch_size),
                         epochs=epochs,
                         #steps_per_epoch=len(x_train) / batch_size,
-                        steps_per_epoch=5,
+                        steps_per_epoch=args.steps,
                         validation_data=(x_test, y_test),
                         workers=4)
+    print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
 
 # Score trained model.
 scores = model.evaluate(x_test, y_test, verbose=1)
