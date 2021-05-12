@@ -159,6 +159,6 @@ else:
     print('peak active bytes(MB): {}'.format(tf.experimental.get_peak_bytes_active(0)/1024.0/1024.0))
 
 # Score trained model.
-scores = model.evaluate(x_test, y_test, verbose=1)
-print('Test loss:', scores[0])
-print('Test accuracy:', scores[1])
+#scores = model.evaluate(x_test, y_test, verbose=1)
+#print('Test loss:', scores[0])
+#print('Test accuracy:', scores[1])

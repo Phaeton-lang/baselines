@@ -1,3 +1,3 @@
 # baselines
 
-AE of baselines.
+DNN Training memory footprint reduction baselines.
