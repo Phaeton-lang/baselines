@@ -1,0 +1,68 @@
+2022-02-20 13:43:44.496755: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2022-02-20 13:43:44.976548: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer.so.7
+2022-02-20 13:43:44.977378: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libnvinfer_plugin.so.7
+2022-02-20 13:43:45.395722: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcuda.so.1
+2022-02-20 13:43:45.859605: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.859864: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.68GHz coreCount: 30 deviceMemorySize: 5.79GiB deviceMemoryBandwidth: 312.97GiB/s
+2022-02-20 13:43:45.859880: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2022-02-20 13:43:45.859901: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2022-02-20 13:43:45.861067: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2022-02-20 13:43:45.861253: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2022-02-20 13:43:45.862597: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2022-02-20 13:43:45.863275: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2022-02-20 13:43:45.863298: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2022-02-20 13:43:45.863357: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.863632: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.863851: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2022-02-20 13:43:45.871699: E bazel-out/k8-py2-opt/bin/tensorflow/python/pywrap_tensorflow_internal.cc:5187] (GetBFCAllocatorStats) No GPU device registered. Skipping getting stats
+
+2022-02-20 13:43:45.871717: E bazel-out/k8-py2-opt/bin/tensorflow/python/pywrap_tensorflow_internal.cc:5388] (getPeakBytesActive) - Could not retrieve BFC Allocator Stats
+2022-02-20 13:43:45.878835: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2022-02-20 13:43:45.883198: I tensorflow/core/platform/profile_utils/cpu_utils.cc:101] CPU Frequency: 2899885000 Hz
+2022-02-20 13:43:45.883412: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d4af31c920 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2022-02-20 13:43:45.883445: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2022-02-20 13:43:45.883601: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.883862: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1558] Found device 0 with properties: 
+pciBusID: 0000:01:00.0 name: NVIDIA GeForce RTX 2060 computeCapability: 7.5
+coreClock: 1.68GHz coreCount: 30 deviceMemorySize: 5.79GiB deviceMemoryBandwidth: 312.97GiB/s
+2022-02-20 13:43:45.883882: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2022-02-20 13:43:45.883892: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2022-02-20 13:43:45.883904: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcufft.so.10
+2022-02-20 13:43:45.883912: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcurand.so.10
+2022-02-20 13:43:45.883920: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusolver.so.10
+2022-02-20 13:43:45.883930: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcusparse.so.10
+2022-02-20 13:43:45.883937: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2022-02-20 13:43:45.883974: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.884216: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:45.884430: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1700] Adding visible gpu devices: 0
+2022-02-20 13:43:45.884448: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudart.so.10.2
+2022-02-20 13:43:46.339801: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1099] Device interconnect StreamExecutor with strength 1 edge matrix:
+2022-02-20 13:43:46.339828: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1105]      0 
+2022-02-20 13:43:46.339833: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1118] 0:   N 
+2022-02-20 13:43:46.339956: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:46.340231: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:46.340513: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:981] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-02-20 13:43:46.340937: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1244] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 5342 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 2060, pci bus id: 0000:01:00.0, compute capability: 7.5)
+2022-02-20 13:43:46.341984: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55d4d1592d90 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2022-02-20 13:43:46.342008: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce RTX 2060, Compute Capability 7.5
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+2022-02-20 13:43:55.604987: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcublas.so.10
+2022-02-20 13:43:55.880330: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library libcudnn.so.7
+2022-02-20 13:43:57.248801: W tensorflow/core/common_runtime/bfc_allocator.cc:311] Garbage collection: deallocate free memory regions (i.e., allocations) so that we can re-allocate a larger region to avoid OOM due to memory fragmentation. If you see this message frequently, you are running near the threshold of the available device memory and re-allocation may incur great performance overhead. You may try smaller batch sizes to observe the performance impact. Set TF_ENABLE_GPU_GARBAGE_COLLECTION=false if you'd like to disable this feature.
+Train for 10 steps
+Epoch 1/4
+ 1/10 [==>...........................] - ETA: 1:48 - loss: 2.7406 2/10 [=====>........................] - ETA: 49s - loss: 3.6155  3/10 [========>.....................] - ETA: 29s - loss: 3.8773 4/10 [===========>..................] - ETA: 18s - loss: 4.4859 5/10 [==============>...............] - ETA: 12s - loss: 4.5970 6/10 [=================>............] - ETA: 8s - loss: 4.1729  7/10 [====================>.........] - ETA: 5s - loss: 4.0227 8/10 [=======================>......] - ETA: 3s - loss: 3.8586 9/10 [==========================>...] - ETA: 1s - loss: 3.618810/10 [==============================] - 14s 1s/step - loss: 3.3643
+Epoch 2/4
+ 1/10 [==>...........................] - ETA: 1s - loss: 1.1423 2/10 [=====>........................] - ETA: 1s - loss: 1.6529 3/10 [========>.....................] - ETA: 1s - loss: 1.7509 4/10 [===========>..................] - ETA: 1s - loss: 1.8346 5/10 [==============>...............] - ETA: 0s - loss: 1.8922 6/10 [=================>............] - ETA: 0s - loss: 1.7482 7/10 [====================>.........] - ETA: 0s - loss: 1.7050 8/10 [=======================>......] - ETA: 0s - loss: 1.5996 9/10 [==========================>...] - ETA: 0s - loss: 1.618810/10 [==============================] - 2s 199ms/step - loss: 1.5906
+Epoch 3/4
+ 1/10 [==>...........................] - ETA: 1s - loss: 2.1355 2/10 [=====>........................] - ETA: 1s - loss: 2.7197 3/10 [========>.....................] - ETA: 1s - loss: 2.4152 4/10 [===========>..................] - ETA: 1s - loss: 2.0799 5/10 [==============>...............] - ETA: 0s - loss: 1.8586 6/10 [=================>............] - ETA: 0s - loss: 1.6304 7/10 [====================>.........] - ETA: 0s - loss: 1.4606 8/10 [=======================>......] - ETA: 0s - loss: 1.3524 9/10 [==========================>...] - ETA: 0s - loss: 1.308810/10 [==============================] - 2s 208ms/step - loss: 1.2328
+Epoch 4/4
+ 1/10 [==>...........................] - ETA: 1s - loss: 0.9932 2/10 [=====>........................] - ETA: 1s - loss: 1.9220 3/10 [========>.....................] - ETA: 1s - loss: 2.0729 4/10 [===========>..................] - ETA: 1s - loss: 1.9631 5/10 [==============>...............] - ETA: 1s - loss: 1.8390 6/10 [=================>............] - ETA: 0s - loss: 1.9099 7/10 [====================>.........] - ETA: 0s - loss: 1.8860 8/10 [=======================>......] - ETA: 0s - loss: 1.8458 9/10 [==========================>...] - ETA: 0s - loss: 1.798510/10 [==============================] - 2s 199ms/step - loss: 1.8298
+2022-02-20 13:44:08.406872: W tensorflow/core/kernels/data/generator_dataset_op.cc:103] Error occurred when finalizing GeneratorDataset iterator: Cancelled: Operation was cancelled
+training throughput: 33.920287324786756
+peak active bytes(MB): 2600.4889373779297

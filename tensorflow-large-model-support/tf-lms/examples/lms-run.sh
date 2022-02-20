@@ -2,20 +2,25 @@
 batch_list=(
 1
 2
+3
 4
+5
+6
+7
 8
+9
+10
+11
+12
+13
+14
+15
 16
-32
-64
-128
-256
-512
-640
-768
-896
+17
+18
 )
-net=vgg16
+net=inception
 for batch in ${batch_list[@]};
 do
-    python ManyModel.py --lms --model ${net} --epochs 5 --image_size 32 --batch_size ${batch} 2>&1 | tee ${net}-batch-${batch}-throughput.log
+    python ManyModel.py --lms --model ${net} --epochs 4 --image_size 299 --batch_size ${batch} 2>&1 | tee lms-turing-${net}-batch-${batch}-throughput.log
 done
